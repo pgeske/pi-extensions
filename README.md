@@ -1,28 +1,23 @@
-# pi-extensions
+# pi-extensions (deprecated)
 
-Personal Pi extensions, skills, prompts, and themes.
+This repository has been consolidated into [`pgeske/agent-config`](https://github.com/pgeske/agent-config).
 
-## Extensions
+Do not install both packages. The maintained setup now keeps Pi extensions, skills, instructions, fullscreen launchers, tmux/terminal/editor dotfiles, tests, and fresh-machine bootstrap automation together in one repository.
 
-- [`mcp-bridge`](./extensions/mcp-bridge/README.md): bridges Streamable HTTP MCP servers into Pi tools.
-
-## Install
+## Install the current setup
 
 ```bash
-pi install git:github.com/pgeske/pi-extensions
+git clone https://github.com/pgeske/agent-config.git ~/agent-config
+cd ~/agent-config
+./bootstrap.sh
 ```
 
-For local development:
+For updates:
 
 ```bash
-npm install
-npm test
-npm run typecheck
-pi -e /path/to/pi-extensions
+cd ~/agent-config
+git pull --ff-only
+./bootstrap.sh
 ```
 
-## Secrets
-
-Do not commit API keys or tokens. Use environment variables and local config files instead.
-
-See [`.env.example`](./.env.example) for currently supported variables.
+The historical MCP bridge implementation remains here for reference, but receives no updates. Use the version in `pgeske/agent-config`.
